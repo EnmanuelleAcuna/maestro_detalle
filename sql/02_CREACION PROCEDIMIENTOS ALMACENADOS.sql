@@ -21,6 +21,7 @@ BEGIN
 
 	SET @idVenta = @@IDENTITY
 
-	INSERT INTO CONCEPTOS (Nombre, 
+	INSERT INTO CONCEPTOS (IdVenta, Nombre, Cantidad, Precio)
+	SELECT @idVenta, Nombre, Cantidad, Precio FROM @conceptos
 END
 GO
